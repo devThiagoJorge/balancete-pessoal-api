@@ -1,7 +1,7 @@
 const Sequelize = require('sequelize');
 const database = require('../database/db');
 
-const Category = database.define('category', {
+const Category = database.define('categories', {
     id: {
         type: Sequelize.INTEGER,
         autoIncrement: true,
@@ -12,6 +12,12 @@ const Category = database.define('category', {
         type: Sequelize.STRING,
         allowNull: false
     },
-})
+});
+
+Category.associate = function (models) {
+    Category.hasMany(models.Purchase, {
+        as: 'purchases'
+    })
+};
 
 module.exports = Category;
