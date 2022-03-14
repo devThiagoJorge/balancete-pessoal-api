@@ -1,6 +1,3 @@
-const {
-    user
-} = require('pg/lib/defaults');
 const Sequelize = require('sequelize');
 const database = require('../database/db');
 
