@@ -1,7 +1,4 @@
 const Category = require('../models/Category');
-const Sequelize = require('sequelize');
-const Op = Sequelize.Op
-
 
 module.exports = {
     async findAll(req, res) {
@@ -12,8 +9,6 @@ module.exports = {
             return console.error("Error: ", error);
         }
     },
-
-
 
     async create(req, res) {
         const {
