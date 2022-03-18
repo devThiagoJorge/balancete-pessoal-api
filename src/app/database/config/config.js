@@ -20,9 +20,15 @@ module.exports = {
     logging: true
   },
   production: {
-    use_env_variable: process.env.DATABASE_URL,
+    use_env_variable: 'DATABASE_URL',
+    dialect: 'postgres',
+    protocol: 'postgres',
+    ssl: true,
     dialectOptions: {
-      ssl: true
-    }
+      ssl: {
+        require: true,
+        rejectUnauthorized: false,
+      },
+    },
   }
 };
