@@ -17,5 +17,3 @@ app.use('/', require('./routes'));
 app.listen(3001);
 
 console.log('Server is running!!');
-
-console.log(process.env.DATABASE_URL);
