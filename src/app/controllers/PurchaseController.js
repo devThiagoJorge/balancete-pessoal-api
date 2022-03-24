@@ -16,8 +16,10 @@ module.exports = {
             price,
             description,
             date,
-            categoryId
+            category_id,
+            payment_type_id
         } = req.body;
+
 
         try {
             const purchase = await Purchase.create({
@@ -25,8 +27,10 @@ module.exports = {
                 price,
                 description,
                 date,
-                categoryId
+                category_id,
+                payment_type_id
             });
+
             return res.json(purchase);
 
         } catch (error) {

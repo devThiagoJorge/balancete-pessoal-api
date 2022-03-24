@@ -20,14 +20,26 @@ const Purchase = database.define('purchases', {
     },
     date: {
         type: Sequelize.DATEONLY
+    },
+    category_id: {
+        type: Sequelize.INTEGER
+    },
+    payment_type_id: {
+        type: Sequelize.INTEGER
     }
+
 });
 
 Purchase.associate = function (models) {
     Purchase.belongsTo(models.Category, {
-        foreignKey: 'categoryId',
+        foreignKey: 'category_id',
         as: 'categories'
-    })
+    });
+
+    Purchase.belongsTo(models.PaymentType, {
+        foreignKey: 'payment_type_id',
+        as: 'paymentTypes'
+    });
 }
 
 module.exports = Purchase;

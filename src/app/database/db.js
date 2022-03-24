@@ -9,7 +9,7 @@ if (process.env.NODE_ENV === "production") {
         dialectOptions: {
             ssl: {
                 require: true,
-                rejectUnauthorized: false // <<<<<<< YOU NEED THIS
+                rejectUnauthorized: false
             }
         },
         define: {
@@ -28,6 +28,8 @@ if (process.env.NODE_ENV === "production") {
             updatedAt: 'updated_at',
         }
     });
+
+    sequelize.sync();
 }
 
 

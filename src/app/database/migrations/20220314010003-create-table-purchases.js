@@ -26,14 +26,14 @@ module.exports = {
           type: Sequelize.DOUBLE,
           allowNull: false
         },
-        categoryId: {
+        category_id: {
           type: Sequelize.INTEGER,
           references: {
             model: 'categories',
-            key: 'id'
+            key: 'id',
+            as: 'category_id'
           },
         },
-
       }),
     ]);
   },

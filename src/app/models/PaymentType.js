@@ -1,7 +1,7 @@
 const Sequelize = require('sequelize');
 const database = require('../database/db');
 
-const Category = database.define('categories', {
+const PaymentType = database.define('paymentTypes', {
     id: {
         type: Sequelize.INTEGER,
         autoIncrement: true,
@@ -14,11 +14,11 @@ const Category = database.define('categories', {
     },
 });
 
-Category.associate = function (models) {
-    Category.hasMany(models.Purchase, {
-        foreignKey: 'category_id',
+PaymentType.associate = function (models) {
+    PaymentType.hasMany(models.Purchase, {
+        foreignKey: 'payment_type_id',
         as: 'purchases'
     })
 };
 
-module.exports = Category;
+module.exports = PaymentType;
