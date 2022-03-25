@@ -12,7 +12,6 @@ module.exports = {
 
     async create(req, res) {
         const {
-            name,
             price,
             description,
             date,
@@ -23,7 +22,6 @@ module.exports = {
 
         try {
             const purchase = await Purchase.create({
-                name,
                 price,
                 description,
                 date,

@@ -51,12 +51,10 @@ module.exports = {
 };
 
 async function findByName(name) {
-    console.log(name);
     const category = await Category.findOne({
         where: {
             name: name
         }
     });
-    console.log(category);
     return category
 }
